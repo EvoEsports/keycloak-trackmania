@@ -22,30 +22,6 @@
         <tag>HEAD</tag>
     </scm>
 
-    <profiles>
-        <profile>
-            <id>src</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-source-plugin</artifactId>
-                        <version>3.2.1</version>
-                        <executions>
-                            <execution>
-                                <id>attach-sources</id>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>jar-no-fork</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
-
     <build>
         <sourceDirectory>src/main/java</sourceDirectory>
         <plugins>
@@ -86,12 +62,18 @@
                     <tagBase>
                         scm:git:${project.scm.url}/tags
                     </tagBase>
-                    <goals>install</goals>
-                    <releaseProfiles>src</releaseProfiles>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/EvoTM/keycloak-trackmania</url>
+        </repository>
+    </distributionManagement>
 
     <dependencies>
         <dependency>
