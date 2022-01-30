@@ -13,3 +13,6 @@ From the terminal, run `mvn release:prepare release:perform`.
 
 ### License
 This project is underlaid the Apache-2.0 License
+
+### Support
+Got any questions related to the use of this extension for Keycloak? Ask us on our [Discord](https://discord.gg/evotm).
