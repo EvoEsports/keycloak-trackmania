@@ -33,5 +33,10 @@ jobs:
         with:
           java-version: 17
           maven-version: ${{ matrix.maven }}
-
-      - run: mvn release:prepare release:perform
+      - name: Maven release
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub actions"
+          mvn release:prepare release:perform
