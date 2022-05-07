@@ -1,0 +1,28 @@
+on:
+  push:
+    branches:
+      - master
+      - dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        maven: [ '3.8.2' ]
+
+    name: Maven publish package
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ssh-key: "${{ secrets.SSH_PRIVATE_KEY }}"
+      - name: Setup Maven Action
+        uses: s4u/setup-maven-action@v1.3.1
+        with:
+          java-version: 17
+          maven-version: ${{ matrix.maven }}
+
+      - run: mvn release:prepare release:perform
