@@ -8,7 +8,7 @@
     <groupId>org.keycloak.extensions</groupId>
     <artifactId>keycloak-trackmania</artifactId>
     <packaging>jar</packaging>
-    <version>0.0.6-SNAPSHOT</version>
+    <version>0.0.4-SNAPSHOT</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -63,6 +63,17 @@
                         scm:git:${project.scm.url}/tags
                     </tagBase>
                 </configuration>
+                <executions>
+                    <execution>
+                        <id>default</id>
+                        <goals>
+                            <goal>perform</goal>
+                        </goals>
+                        <configuration>
+                            <pomFileName>pom.xml</pomFileName>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
