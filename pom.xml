@@ -8,7 +8,7 @@
     <groupId>org.keycloak.extensions</groupId>
     <artifactId>keycloak-trackmania</artifactId>
     <packaging>jar</packaging>
-    <version>0.0.4-SNAPSHOT</version>
+    <version>0.0.4</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
