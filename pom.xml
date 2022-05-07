@@ -19,7 +19,7 @@
         <url>git@github.com:EvoTM/keycloak-trackmania.git</url>
         <connection>scm:git:${project.scm.url}</connection>
         <developerConnection>scm:git:${project.scm.url}</developerConnection>
-        <tag>keycloak-trackmania-0.0.5</tag>
+        <tag>keycloak-trackmania-0.0.4</tag>
     </scm>
 
     <build>
