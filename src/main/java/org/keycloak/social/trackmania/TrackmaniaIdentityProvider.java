@@ -27,10 +27,9 @@ public class TrackmaniaIdentityProvider extends AbstractOAuth2IdentityProvider<T
 
     @Override
     protected BrokeredIdentityContext extractIdentityFromProfile(EventBuilder event, JsonNode profile) {
-        BrokeredIdentityContext user = new BrokeredIdentityContext(getJsonProperty(profile, "account_id"));
+        BrokeredIdentityContext user = new BrokeredIdentityContext(getJsonProperty(profile, "account_id"), getConfig());
 
         user.setUsername(getJsonProperty(profile, "display_name"));
-        user.setIdpConfig(getConfig());
         user.setIdp(this);
 
         AbstractJsonUserAttributeMapper.storeUserProfileForMapper(user, profile, getConfig().getAlias());
